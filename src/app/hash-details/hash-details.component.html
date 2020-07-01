@@ -1,13 +1,27 @@
 
 <div *ngIf="hash">
   <div>
-    <label>Id: </label> {{hash.id}}
+    <label><b>Id: </b></label> {{hash.id}}
   </div>
   <div>
-    <label>Url: </label> {{hash.url}}
+    <label><b>Url: </b></label> {{hash.url}}
   </div>
   <div>
-    <label>User: </label> {{hash.buyer}}
+    <div *ngIf="hash.buyer"> <!-- Per evitare che quando l'utente non è settato venga fuori un campo vuoto e per evitare problemi di null pointer -->
+      <div>
+        <label><b>User</b></label><br>
+        <label><b>Nome:</b></label> {{hash.buyer.firstName}}
+      </div>
+      <div>
+        <label><b>Cognome:</b></label> {{hash.buyer.lastName}}
+      </div>
+      <div>
+        <label><b>Indirizzo:</b></label> {{hash.buyer.address}}
+      </div>
+      <div>
+        <label><b>Email:</b></label> {{hash.buyer.email}}
+      </div>
+    </div>
   </div>
-
 </div>
+
