@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,7 @@ import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDividerModule} from '@angular/material/divider';
+import { LoginService } from './login.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import {MatDividerModule} from '@angular/material/divider';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatDividerModule
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

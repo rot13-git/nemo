@@ -7,7 +7,7 @@ import { Hash } from './hash';
   providedIn: 'root'
 })
 export class HashService {
-  private baseUrl = 'http://localhost:8080/hashes';
+  private baseUrl = 'http://localhost:8000/hashes';
 
   constructor(private http:HttpClient) { }
 
