@@ -31,7 +31,7 @@ export class LoginService {
   }
   saveToken(token) {
     var expireDate = new Date().getTime() + (1000 * token.expires_in);
-    this._cookieService.set("access_token", token.access_token, expireDate);
+    this._cookieService.set("access_token", token.access_token);
     console.log('Obtained Access token');
     window.location.href = this.redirectUri;
   }

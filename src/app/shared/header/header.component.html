@@ -1,0 +1,14 @@
+<mat-toolbar color="#0088CE">
+  <mat-toolbar-row>
+    <span>Nemo</span>
+    <span class="example-spacer"></span>
+
+    <button *ngIf="!isLoggedIn" mat-icon-button class="" aria-label="Example icon-button with heart icon" (click)="login()">
+      <mat-icon>person</mat-icon>
+    </button>
+    <button *ngIf="isLoggedIn" mat-icon-button class="" aria-label="Example icon-button with heart icon" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+

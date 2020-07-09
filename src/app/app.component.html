@@ -1,18 +1,11 @@
-<div style="padding: 20px;">
-  <h1 style="color: blue">{{title}}</h1>
-</div>
+<app-header></app-header>
+<nav>
+  <ul>
+    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/hash" routerLinkActive="active">Hash</a></li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
 
-<app-hash-list></app-hash-list>
 
-<app-buyer-list></app-buyer-list>
-
-<div class="container" >
-  <button *ngIf="!isLoggedIn" class="btn btn-primary" (click)="login()" type="submit">
-    Login</button>
-  <div *ngIf="isLoggedIn" class="content">
-    <span>Welcome !!</span>
-    <a class="btn btn-default pull-right"(click)="logout()" href="#">Logout</a>
-    <br/>
-
-  </div>
-</div>
+<app-footer></app-footer>
