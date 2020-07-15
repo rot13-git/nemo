@@ -16,6 +16,11 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button'
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { SidebarComponent } from './shared/sidebar/sidebar.component'
+import{ FlexLayoutModule } from '@angular/flex-layout/';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +29,8 @@ import {MatButtonModule} from '@angular/material/button'
     BuyerListComponent,
     BuyerDetailsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,11 @@ import {MatButtonModule} from '@angular/material/button'
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSidenavModule,
+    FlexLayoutModule,
+    MatMenuModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
