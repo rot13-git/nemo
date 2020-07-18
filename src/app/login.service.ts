@@ -31,6 +31,7 @@ export class LoginService {
   }
   saveToken(token) {
     var expireDate = new Date().getTime() + (1000 * token.expires_in);
+    this._cookieService.set("refresh_token",token.refresh_token);
     this._cookieService.set("access_token", token.access_token);
     console.log('Obtained Access token');
     window.location.href = this.redirectUri;
@@ -45,7 +46,10 @@ export class LoginService {
     return this._cookieService.check("access_token");
   }
   logout(){
+    var headers = new HttpHeaders({
+      'Authorization': 'Bearer '+this._cookieService.get('access_token')});
     this._cookieService.delete("access_token");
+    this._http.delete("http://localhost:8080/auth/realms/Nemo-Realme/protocol/openid-connect/logout?redirect_uri=http%3A%2F%2Flocalhost%3A4200%2F%0A").subscribe();
     window.location.reload();
   }
 }

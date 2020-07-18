@@ -1,12 +1,5 @@
 <mat-nav-list>
-  <div class='profile-card'>
-    <div class='header'>
-      <h2>Utente Prova</h2>
-      <h4>prova@email.com</h4>
-    </div>
-    <img src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-  </div>
-  <mat-divider></mat-divider>
+   <app-buyer-list *ngIf="isLoggedIn"></app-buyer-list>
   <h2 matSubheader>Menu</h2>
   <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
     <mat-icon>home</mat-icon>

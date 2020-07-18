@@ -21,6 +21,10 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component'
 import{ FlexLayoutModule } from '@angular/flex-layout/';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,8 @@ import {MatListModule} from '@angular/material/list';
     BuyerDetailsComponent,
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
+    HomeComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,11 @@ import {MatListModule} from '@angular/material/list';
     MatSidenavModule,
     FlexLayoutModule,
     MatMenuModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

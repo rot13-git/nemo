@@ -1,9 +1,5 @@
 export class Buyer{
-  id:number;
-  code:string;
-  firstName:string;
-  lastName:string;
-  telephone:string;
+  username:string;
   email:string;
-  address:string;
+  firstname:string;
 }

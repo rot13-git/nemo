@@ -1,0 +1,18 @@
+
+<mat-card>
+  <mat-card-title>Benvenuto in Nemo</mat-card-title>
+  <mat-card-content>
+    <p>
+      Nemo ti offre la possibilità di usufruire di un servizio di short url, per tutte le tue necessità
+    </p>
+  </mat-card-content>
+  <form class="example-form" [formGroup]="form" (ngSubmit)="submit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Url</mat-label>
+      <input matInput formControlName="url" type="text" id="url" placeholder="Ex. http://www.google.it" required>
+      <mat-error *ngIf="f.url.touched && f.url.invalid && f.url.errors.pattern">Please enter a valid url</mat-error>
+      <mat-error *ngIf="f.url.touched && f.url.invalid && f.url.errors.required">Url is <strong>required</strong></mat-error>
+    </mat-form-field>
+    <button type="submit" [disabled] = "!form.valid" mat-raised-button color="primary">Invia</button>
+  </form>
+</mat-card>
