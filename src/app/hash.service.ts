@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { Hash } from './hash';
 
@@ -15,5 +15,15 @@ export class HashService {
     return this.http.get<Hash[]>(`${this.baseUrl}`);
   }
 
+  createNewHash(url:string): Observable<any>{
+    const body = {
+      url
+    }
+    const headers = new HttpHeaders(
+      {
+          'Content-Type': 'application/json'
+      });
+    return this.http.post<Hash>(`${this.baseUrl}`+"/make",body, {headers : headers});
+  }
 
 }

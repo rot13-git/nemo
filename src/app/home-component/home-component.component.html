@@ -13,6 +13,17 @@
       <mat-error *ngIf="f.url.touched && f.url.invalid && f.url.errors.pattern">Please enter a valid url</mat-error>
       <mat-error *ngIf="f.url.touched && f.url.invalid && f.url.errors.required">Url is <strong>required</strong></mat-error>
     </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Custom Short</mat-label>
+      <input matInput type="text" id="short" placeholder="Ex. customUrl">
+    </mat-form-field>
     <button type="submit" [disabled] = "!form.valid" mat-raised-button color="primary">Invia</button>
   </form>
+</mat-card>
+<br>
+<mat-card *ngIf="hash">
+  <mat-card-title>ShortLink creato con successo: </mat-card-title>
+  <mat-card-content>
+    <a href="http://localhost:8000/{{hash.shUrl}}">http://localhost:8000/{{hash.shUrl}}</a>
+  </mat-card-content>
 </mat-card>
