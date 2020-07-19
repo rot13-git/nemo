@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HashListComponent } from './hash-list/hash-list.component';
 import { HashDetailsComponent } from './hash-details/hash-details.component';
-import { BuyerListComponent } from './buyer-list/buyer-list.component';
 import { BuyerDetailsComponent } from './buyer-details/buyer-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,17 +24,18 @@ import { HomeComponentComponent } from './home-component/home-component.componen
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
+import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     HashListComponent,
     HashDetailsComponent,
-    BuyerListComponent,
     BuyerDetailsComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
+    UserdashboardComponent
   ],
   imports: [
     BrowserModule,

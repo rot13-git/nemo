@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 
 import {Hash} from '../hash';
 import {HashService} from '../hash.service';
+import { BuyerService } from '../buyer.service';
 
 @Component({
   selector: 'app-hash-list',
@@ -11,13 +12,13 @@ import {HashService} from '../hash.service';
 })
 export class HashListComponent implements OnInit {
   hashes: Hash[];
-  constructor(private hashService:HashService) { }
+  constructor(private buyerService:BuyerService) { }
 
   ngOnInit(): void {
     this.reloadData();
   }
   reloadData(){
-    this.hashService.getHashesList().subscribe(hashes => this.hashes = hashes);
+    this.buyerService.getUserHashes().subscribe(hashes => this.hashes = hashes);
   }
 
 }

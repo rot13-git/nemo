@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Buyer} from '../buyer';
 import {BuyerService} from '../buyer.service';
 
-import { BuyerListComponent } from '../buyer-list/buyer-list.component';
+
 
 @Component({
   selector: 'app-buyer-details',
@@ -13,10 +13,14 @@ import { BuyerListComponent } from '../buyer-list/buyer-list.component';
 
 export class BuyerDetailsComponent implements OnInit {
 
-  @Input() buyer:Buyer;
+  buyer:Buyer;
 
-  constructor(private buyerService:BuyerService, private listBuyer:BuyerListComponent) { }
+  constructor(private buyerService:BuyerService) { }
 
   ngOnInit(): void {
+    this.reloadData();
+  }
+  reloadData(){
+    this.buyerService.getBuyer().subscribe(buyer => this.buyer = buyer);
   }
 }

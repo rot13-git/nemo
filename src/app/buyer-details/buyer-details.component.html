@@ -1,7 +1,8 @@
-<div *ngIf="buyer" class='profile-card'>
+<mat-card *ngIf="buyer">
+<div class='profile-card'  >
     <div class='header'>
-      <h2>{{buyer.firstname}}</h2>
+      <h2>Benvenuto <br>{{buyer.firstname}}</h2>
       <h4>{{buyer.email}}</h4>
     </div>
 </div>
-<mat-divider></mat-divider>
+</mat-card>

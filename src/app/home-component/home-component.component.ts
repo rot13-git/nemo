@@ -14,7 +14,7 @@ export class HomeComponentComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   constructor(private fb: FormBuilder, private HashService:HashService) {
 
-    const reg = "^(http:\/\/www\.)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$";
+    const reg = "^(http(s)?:\/\/(www\.)?)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$";
 
     this.form = fb.group({
       url: ['', [Validators.required, Validators.pattern(reg)]]

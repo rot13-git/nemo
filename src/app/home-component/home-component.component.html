@@ -1,4 +1,3 @@
-
 <mat-card>
   <mat-card-title>Benvenuto in Nemo</mat-card-title>
   <mat-card-content>
@@ -12,10 +11,6 @@
       <input matInput formControlName="url" type="text" id="url" placeholder="Ex. http://www.google.it" required>
       <mat-error *ngIf="f.url.touched && f.url.invalid && f.url.errors.pattern">Please enter a valid url</mat-error>
       <mat-error *ngIf="f.url.touched && f.url.invalid && f.url.errors.required">Url is <strong>required</strong></mat-error>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-      <mat-label>Custom Short</mat-label>
-      <input matInput type="text" id="short" placeholder="Ex. customUrl">
     </mat-form-field>
     <button type="submit" [disabled] = "!form.valid" mat-raised-button color="primary">Invia</button>
   </form>
