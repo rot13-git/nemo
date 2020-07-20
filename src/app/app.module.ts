@@ -25,6 +25,7 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { UserdashboardComponent } from './userdashboard/userdashboard.component'
     FooterComponent,
     SidebarComponent,
     HomeComponentComponent,
-    UserdashboardComponent
+    UserdashboardComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,

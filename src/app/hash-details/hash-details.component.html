@@ -7,19 +7,22 @@
     <label><b>Url: </b></label> {{hash.url}}
   </div>
   <div>
-    <div *ngIf="hash.buyer"> <!-- Per evitare che quando l'utente non è settato venga fuori un campo vuoto e per evitare problemi di null pointer -->
+    <label><b>Shortened: </b></label> {{hash.shurl}}
+  </div>
+  <div>
+    <div *ngIf="hash.user_id"> <!-- Per evitare che quando l'utente non è settato venga fuori un campo vuoto e per evitare problemi di null pointer -->
       <div>
         <label><b>User</b></label><br>
-        <label><b>Nome:</b></label> {{hash.buyer.firstName}}
+        <label><b>Nome:</b></label> {{hash.user_id.firstname}}
       </div>
       <div>
-        <label><b>Cognome:</b></label> {{hash.buyer.lastName}}
+        <label><b>Cognome:</b></label> {{hash.user_id.lastname}}
       </div>
       <div>
-        <label><b>Indirizzo:</b></label> {{hash.buyer.address}}
+        <label><b>Indirizzo:</b></label> {{hash.user_id.address}}
       </div>
       <div>
-        <label><b>Email:</b></label> {{hash.buyer.email}}
+        <label><b>Email:</b></label> {{hash.user_id.email}}
       </div>
     </div>
   </div>
