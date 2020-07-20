@@ -39,6 +39,18 @@ export class BuyerService {
       });
     return this.http.post<Hash>(`${this.baseUrl}`+"/create",body, {headers : headers});
   }
+  createNewHashCustom(url:string,alias:string): Observable<any>{
+    const body = {
+      url,
+      alias
+    }
+    const headers = new HttpHeaders(
+      {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer '+this._cookieService.get('access_token')
+      });
+    return this.http.post<Hash>(`${this.baseUrl}`+"/customize",body, {headers : headers});
+  }
 
 
 }

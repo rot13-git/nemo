@@ -14,7 +14,7 @@
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <mat-label>Custom Short</mat-label>
-      <input matInput type="text" id="short" placeholder="Ex. customUrl">
+      <input matInput formControlName="short" type="text" id="short" placeholder="Ex. customUrl">
     </mat-form-field>
     <button type="submit" [disabled] = "!form.valid" mat-raised-button color="primary">Invia</button>
   </form>
@@ -26,6 +26,7 @@
     <a href="http://localhost:8000/{{hash.shUrl}}">http://localhost:8000/{{hash.shUrl}}</a>
   </mat-card-content>
 </mat-card>
+<br>
 <mat-card *ngIf="!isLoggedIn">
   <mat-card-title>Login Richiesto</mat-card-title>
   <mat-card-content>

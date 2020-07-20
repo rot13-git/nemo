@@ -25,7 +25,6 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
@@ -37,8 +36,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     FooterComponent,
     SidebarComponent,
     HomeComponentComponent,
-    UserdashboardComponent,
-    AdmindashboardComponent
+    UserdashboardComponent
   ],
   imports: [
     BrowserModule,

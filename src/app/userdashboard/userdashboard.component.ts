@@ -19,7 +19,8 @@ export class UserdashboardComponent implements OnInit {
     const reg = "^(http(s)?:\/\/(www\.)?)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$";
 
     this.form = fb.group({
-      url: ['', [Validators.required, Validators.pattern(reg)]]
+      url: ['', [Validators.required, Validators.pattern(reg)]],
+      short:['',[]]
     })
   }
   get f(){
@@ -28,8 +29,13 @@ export class UserdashboardComponent implements OnInit {
 
 
   submit(){
-    this.userService.createNewHash(this.form.value.url).subscribe(hash => this.hash = hash);
-    
+    console.log(this.form.value)
+    if(this.form.value.short != ""){
+      this.userService.createNewHashCustom(this.form.value.url,this.form.value.short).subscribe(hash => this.hash=hash);
+    }
+    else{
+      this.userService.createNewHash(this.form.value.url).subscribe(hash => this.hash = hash);
+    }
   }
   ngOnInit(): void {
     this.isLoggedIn = this._service.checkCredentials();
