@@ -14,7 +14,7 @@ import { HashListComponent } from '../hash-list/hash-list.component';
 export class HashDetailsComponent implements OnInit {
 
   @Input() hash:Hash;
-
+  @Input() utente:boolean;
   constructor(private hashService:HashService, private listHash:HashListComponent) { }
 
   ngOnInit(): void {

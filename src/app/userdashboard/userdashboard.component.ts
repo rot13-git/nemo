@@ -12,7 +12,6 @@ import { BuyerService } from '../buyer.service';
 })
 export class UserdashboardComponent implements OnInit {
 
-  hashes: Hash[];
   hash:Hash;
   public isLoggedIn = false;
   form: FormGroup = new FormGroup({});
@@ -29,8 +28,8 @@ export class UserdashboardComponent implements OnInit {
 
 
   submit(){
-    console.log(this.form.value.url);
     this.userService.createNewHash(this.form.value.url).subscribe(hash => this.hash = hash);
+    
   }
   ngOnInit(): void {
     this.isLoggedIn = this._service.checkCredentials();

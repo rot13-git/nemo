@@ -5,6 +5,7 @@ import { Buyer } from './buyer';
 import { LoginService } from './login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Hash } from './hash';
+import { PageEvent } from '@angular/material/paginator';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +21,12 @@ export class BuyerService {
       'Authorization': 'Bearer '+this._cookieService.get('access_token')});
     return this.http.get<Buyer>(`${this.baseUrl}`, { headers: headers });
   }
-  getUserHashes():Observable<Hash[]>{
+  getUserHashes(pageSize:number,pageIndex:number):Observable<Hash[]>{
     var headers = new HttpHeaders({
       'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
       'Authorization': 'Bearer '+this._cookieService.get('access_token')});
-      return this.http.get<Hash[]>(`${this.baseUrl}`+"/hashes",{headers:headers});
+    return this.http.get<Hash[]>(`${this.baseUrl}`+"/hashes?pageNumber="+pageIndex+"&pageSize="+pageSize,{headers:headers});
+
   }
   createNewHash(url:string): Observable<any>{
     const body = {

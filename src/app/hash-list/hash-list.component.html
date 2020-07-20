@@ -1,6 +1,17 @@
+<button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
+<br><br>
 <div *ngFor="let hash of hashes" style="width:300px;">
-  <app-hash-details [hash]='hash'></app-hash-details>
   <mat-divider></mat-divider>
+  <app-hash-details [hash]='hash' [utente]='utente'></app-hash-details>
 </div>
+<mat-divider></mat-divider>
+<mat-paginator #paginator
+              [length]="length"
+              [pageSize]="pageSize"
+              [pageIndex]="pageIndex"
+              [pageSizeOptions]="[5, 10, 25]"
+              (page) = "reloadData($event)"
+              >
+</mat-paginator>
 
 

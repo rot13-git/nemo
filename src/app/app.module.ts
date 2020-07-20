@@ -26,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import { UserdashboardComponent } from './userdashboard/userdashboard.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     MatInputModule,
     FormsModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

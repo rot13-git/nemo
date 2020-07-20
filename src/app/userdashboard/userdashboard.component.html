@@ -39,7 +39,7 @@
   </mat-card-content>
 </mat-card>
 
-<mat-card *ngIf="isLoggedIn">
+<mat-card *ngIf="isLoggedIn" class="lista">
   <mat-card-title>I tuoi Short</mat-card-title>
-  <app-hash-list></app-hash-list>
+  <app-hash-list [utente]=false ></app-hash-list>
 </mat-card>
